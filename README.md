@@ -28,3 +28,5 @@ The Comics table contains the following information:
     rating: (float) value from 1 to 10 with only one decimal after it
 
 The purpose of this data set is to ease the search for new comics from new fans and to help them find something to read that suits them.
+
+Database used for this project is MongoDB.
