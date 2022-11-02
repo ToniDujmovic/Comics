@@ -2,8 +2,10 @@
 
 This is project that is being managed for the subject "Otvoreno računarstvo" (Open computing) on the Faculty of Electrical Engineering and Computing.
 
-License: MIT 
+License: MIT
+
 License Autor: Toni Dujmović
+
 Version: 1.0
 
 Publication date 	02.11.2022.
