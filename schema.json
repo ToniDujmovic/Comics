@@ -1,0 +1,983 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://github.com/ToniDujmovic/Comics/blob/main/schema.json",
+    "title": "Comics Schema",
+    "description": "Comics set for the Open Computing subject.",
+    "type": "array",
+    "default": [],
+    "items": {
+        "type": "object",
+        "required": [
+            "_id",
+            "title",
+            "creators",
+            "main_characters",
+            "side_characters",
+            "price",
+            "release_date",
+            "publisher",
+            "page_count",
+            "format",
+            "issue_number",
+            "rating"
+        ],
+        "properties": {
+            "_id": {
+                "title": "The _id Schema",
+                "description": "MongoDB value id",
+                "type": "object",
+                "required": [
+                    "$oid"
+                ],
+                "properties": {
+                    "$oid": {
+                        "title": "Object Id MongoDB",
+                        "description": "Mongo id value that is added in Database",
+                        "type": "string",
+                        "examples": [
+                            "636138473267d755b47b2021",
+                            "636138473267d755b47b2022",
+                            "636138473267d755b47b2023",
+                            "636138473267d755b47b2024",
+                            "636138473267d755b47b2025",
+                            "636138473267d755b47b2026",
+                            "636138473267d755b47b2027",
+                            "636138473267d755b47b2028",
+                            "636138473267d755b47b2029",
+                            "636138473267d755b47b202a"
+                        ]
+                    }
+                },
+                "examples": [{
+                    "$oid": "636138473267d755b47b2021"
+                },
+                {
+                    "$oid": "636138473267d755b47b2022"
+                },
+                {
+                    "$oid": "636138473267d755b47b2023"
+                },
+                {
+                    "$oid": "636138473267d755b47b2024"
+                },
+                {
+                    "$oid": "636138473267d755b47b2025"
+                },
+                {
+                    "$oid": "636138473267d755b47b2026"
+                },
+                {
+                    "$oid": "636138473267d755b47b2027"
+                },
+                {
+                    "$oid": "636138473267d755b47b2028"
+                },
+                {
+                    "$oid": "636138473267d755b47b2029"
+                },
+                {
+                    "$oid": "636138473267d755b47b202a"
+                }]
+            },
+            "title": {
+                "title": "Comic title",
+                "description": "Title of the comic",
+                "type": "string",
+                "examples": [
+                    "Invincible Iron Man",
+                    "Dark Web",
+                    "Ant-Man \u0026 Wasp",
+                    "Black Panther",
+                    "Captain America",
+                    "The Flash: One-Minute War Special",
+                    "Adventures of Superman",
+                    "Batman in Barcelona: Dragon's Knight",
+                    "Flashpoint: Reverse Flash",
+                    "Critical Role - Vox Machina: Origins"
+                ]
+            },
+            "creators": {
+                "title": "Creators name and job",
+                "description": "Information about some of the creators of the comics that include names and jobs on the comic",
+                "type": "array",
+                "items": {
+                    "title": "A Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "type": "object",
+                    "required": [
+                        "name",
+                        "job"
+                    ],
+                    "properties": {
+                        "name": {
+                            "title": "The name Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "type": "string",
+                            "examples": [
+                                "Gerry Dugan",
+                                "Juan Frigeri",
+                                "Zeb Wells",
+                                "Adam Kubert",
+                                "Tim Seeley",
+                                "Victor Olazaba",
+                                "Ta-Nehisi Coates",
+                                "Joe Sabino",
+                                "Ed Brubaker",
+                                "Sean McKeever",
+                                "Butch Guice",
+                                "Christos Gage",
+                                "Eduardo Francisco",
+                                "Mark Waid",
+                                "Diego Olmos",
+                                "Scott Kolins",
+                                "Joel Gomez",
+                                "Matthew Mercer",
+                                "Olivia Samson"
+                            ]
+                        },
+                        "job": {
+                            "title": "The job Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "type": "string",
+                            "examples": [
+                                "Writer",
+                                "Artist",
+                                "Inker",
+                                "Letterer"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "name": "Gerry Dugan",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Juan Frigeri",
+                        "job": "Artist"
+                    },
+                    {
+                        "name": "Zeb Wells",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Adam Kubert",
+                        "job": "Artist"
+                    },
+                    {
+                        "name": "Tim Seeley",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Victor Olazaba",
+                        "job": "Inker"
+                    },
+                    {
+                        "name": "Ta-Nehisi Coates",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Joe Sabino",
+                        "job": "Letterer"
+                    },
+                    {
+                        "name": "Ed Brubaker",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Sean McKeever",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Butch Guice",
+                        "job": "Artist"
+                    },
+                    {
+                        "name": "Gerry Dugan",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Juan Frigeri",
+                        "job": "Artist"
+                    },
+                    {
+                        "name": "Christos Gage",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Eduardo Francisco",
+                        "job": "Artist"
+                    },
+                    {
+                        "name": "Mark Waid",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Diego Olmos",
+                        "job": "Artist"
+                    },
+                    {
+                        "name": "Scott Kolins",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Joel Gomez",
+                        "job": "Artist"
+                    },
+                    {
+                        "name": "Matthew Mercer",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Olivia Samson",
+                        "job": "Artist"
+                    }]
+                },
+                "examples": [
+                    [{
+                        "name": "Gerry Dugan",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Juan Frigeri",
+                        "job": "Artist"
+                    }],
+                    [{
+                        "name": "Zeb Wells",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Adam Kubert",
+                        "job": "Artist"
+                    }],
+                    [{
+                        "name": "Tim Seeley",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Victor Olazaba",
+                        "job": "Inker"
+                    }],
+                    [{
+                        "name": "Ta-Nehisi Coates",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Joe Sabino",
+                        "job": "Letterer"
+                    }],
+                    [{
+                        "name": "Ed Brubaker",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Sean McKeever",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Butch Guice",
+                        "job": "Artist"
+                    }],
+                    [{
+                        "name": "Gerry Dugan",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Juan Frigeri",
+                        "job": "Artist"
+                    }],
+                    [{
+                        "name": "Christos Gage",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Eduardo Francisco",
+                        "job": "Artist"
+                    }],
+                    [{
+                        "name": "Mark Waid",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Diego Olmos",
+                        "job": "Artist"
+                    }],
+                    [{
+                        "name": "Scott Kolins",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Joel Gomez",
+                        "job": "Artist"
+                    }],
+                    [{
+                        "name": "Matthew Mercer",
+                        "job": "Writer"
+                    },
+                    {
+                        "name": "Olivia Samson",
+                        "job": "Artist"
+                    }]
+                ]
+            },
+            "main_characters": {
+                "title": "Main character name",
+                "description": "Main character of the comic",
+                "type": "string",
+                "examples": [
+                    "Iron Man",
+                    "Spider-Man",
+                    "Ant-Man",
+                    "Balck Panther",
+                    "Captain America",
+                    "Barry Allen Flash",
+                    "Superman",
+                    "Batman",
+                    "Reverse Flash",
+                    "Vox Machina"
+                ]
+            },
+            "side_characters": {
+                "title": "Side character of comic",
+                "description": "Side character that is in the comic",
+                "type": "array",
+                "items": {
+                    "title": "A Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "type": "string",
+                    "examples": [
+                        "Hulk",
+                        "Jean Gray",
+                        "Wasp",
+                        "Okoye",
+                        "Baron Zemo",
+                        "Wally West Flash",
+                        "Bizzaro",
+                        "Jonathan Crane",
+                        "Flash",
+                        "Grog Strongjaw"
+                    ]
+                },
+                "examples": [
+                    [
+                        "Hulk"],
+                    [
+                        "Jean Gray"],
+                    [
+                        "Wasp"],
+                    [
+                        "Okoye"],
+                    [
+                        "Baron Zemo"],
+                    [
+                        "Wally West Flash"],
+                    [
+                        "Bizzaro"],
+                    [
+                        "Jonathan Crane"],
+                    [
+                        "Flash"],
+                    [
+                        "Grog Strongjaw"]
+                ]
+            },
+            "price": {
+                "title": "Price of Comic",
+                "description": "An explanation about the purpose of this instance.",
+                "type": "string",
+                "examples": [
+                    "$4.99",
+                    "$3.99",
+                    "$5.99",
+                    "$2.99"
+                ]
+            },
+            "release_date": {
+                "title": "The release_date Schema",
+                "description": "Price of the comic in USD",
+                "type": "string",
+                "examples": [
+                    "14.12.2022.",
+                    "7.12.2022.",
+                    "1.12.2010.",
+                    "28.03.2018.",
+                    "09.06.2010.",
+                    "31.1.2023.",
+                    "29.01.2014.",
+                    "27.05.2009.",
+                    "22.06.2011.",
+                    "10.02.2021."
+                ]
+            },
+            "publisher": {
+                "title": "Comic publisher",
+                "description": "Name of the publishing house that published the comic",
+                "type": "string",
+                "examples": [
+                    "Marvel Comics",
+                    "DC Comics",
+                    "Dark Horse Comics"
+                ]
+            },
+            "page_count": {
+                "title": "Page number",
+                "description": "Number of pages in the Comic",
+                "type": "integer",
+                "examples": [
+                    36,
+                    32,
+                    28,
+                    48
+                ]
+            },
+            "format": {
+                "title": "Comic format",
+                "description": "Format in which the comic was written",
+                "type": "string",
+                "examples": [
+                    "Comic"
+                ]
+            },
+            "issue_number": {
+                "title": "Issue Number of Comic",
+                "description": "An explanation about the purpose of this instance.",
+                "type": "string",
+                "examples": [
+                    "#1",
+                    "#2",
+                    "#171",
+                    "#606",
+                    "#9"
+                ]
+            },
+            "rating": {
+                "title": "The rating Schema",
+                "description": "What part of the story is this edition of the comic",
+                "type": [
+                    "number",
+                    "null"
+                ],
+                "examples": [
+                    9.4,
+                    8.7,
+                    7.3,
+                    8.9,
+                    null,
+                    4.3,
+                    6.7,
+                    9.1,
+                    9.9
+                ]
+            }
+        },
+        "examples": [{
+            "_id": {
+                "$oid": "636138473267d755b47b2021"
+            },
+            "title": "Invincible Iron Man",
+            "creators": [{
+                "name": "Gerry Dugan",
+                "job": "Writer"
+            },
+            {
+                "name": "Juan Frigeri",
+                "job": "Artist"
+            }],
+            "main_characters": "Iron Man",
+            "side_characters": [
+                "Hulk"
+            ],
+            "price": "$4.99",
+            "release_date": "14.12.2022.",
+            "publisher": "Marvel Comics",
+            "page_count": 36,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 9.4
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2022"
+            },
+            "title": "Dark Web",
+            "creators": [{
+                "name": "Zeb Wells",
+                "job": "Writer"
+            },
+            {
+                "name": "Adam Kubert",
+                "job": "Artist"
+            }],
+            "main_characters": "Spider-Man",
+            "side_characters": [
+                "Jean Gray"
+            ],
+            "price": "$4.99",
+            "release_date": "7.12.2022.",
+            "publisher": "Marvel Comics",
+            "page_count": 36,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 8.7
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2023"
+            },
+            "title": "Ant-Man \u0026 Wasp",
+            "creators": [{
+                "name": "Tim Seeley",
+                "job": "Writer"
+            },
+            {
+                "name": "Victor Olazaba",
+                "job": "Inker"
+            }],
+            "main_characters": "Ant-Man",
+            "side_characters": [
+                "Wasp"
+            ],
+            "price": "$3.99",
+            "release_date": "1.12.2010.",
+            "publisher": "Marvel Comics",
+            "page_count": 32,
+            "format": "Comic",
+            "issue_number": "#2",
+            "rating": 7.3
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2024"
+            },
+            "title": "Black Panther",
+            "creators": [{
+                "name": "Ta-Nehisi Coates",
+                "job": "Writer"
+            },
+            {
+                "name": "Joe Sabino",
+                "job": "Letterer"
+            }],
+            "main_characters": "Balck Panther",
+            "side_characters": [
+                "Okoye"
+            ],
+            "price": "$3.99",
+            "release_date": "28.03.2018.",
+            "publisher": "Marvel Comics",
+            "page_count": 28,
+            "format": "Comic",
+            "issue_number": "#171",
+            "rating": 8.9
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2025"
+            },
+            "title": "Captain America",
+            "creators": [{
+                "name": "Ed Brubaker",
+                "job": "Writer"
+            },
+            {
+                "name": "Sean McKeever",
+                "job": "Writer"
+            },
+            {
+                "name": "Butch Guice",
+                "job": "Artist"
+            }],
+            "main_characters": "Captain America",
+            "side_characters": [
+                "Baron Zemo"
+            ],
+            "price": "$3.99",
+            "release_date": "09.06.2010.",
+            "publisher": "Marvel Comics",
+            "page_count": 28,
+            "format": "Comic",
+            "issue_number": "#606",
+            "rating": 7.3
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2026"
+            },
+            "title": "The Flash: One-Minute War Special",
+            "creators": [{
+                "name": "Gerry Dugan",
+                "job": "Writer"
+            },
+            {
+                "name": "Juan Frigeri",
+                "job": "Artist"
+            }],
+            "main_characters": "Barry Allen Flash",
+            "side_characters": [
+                "Wally West Flash"
+            ],
+            "price": "$5.99",
+            "release_date": "31.1.2023.",
+            "publisher": "DC Comics",
+            "page_count": 48,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": null
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2027"
+            },
+            "title": "Adventures of Superman",
+            "creators": [{
+                "name": "Christos Gage",
+                "job": "Writer"
+            },
+            {
+                "name": "Eduardo Francisco",
+                "job": "Artist"
+            }],
+            "main_characters": "Superman",
+            "side_characters": [
+                "Bizzaro"
+            ],
+            "price": "$3.99",
+            "release_date": "29.01.2014.",
+            "publisher": "DC Comics",
+            "page_count": 28,
+            "format": "Comic",
+            "issue_number": "#9",
+            "rating": 4.3
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2028"
+            },
+            "title": "Batman in Barcelona: Dragon's Knight",
+            "creators": [{
+                "name": "Mark Waid",
+                "job": "Writer"
+            },
+            {
+                "name": "Diego Olmos",
+                "job": "Artist"
+            }],
+            "main_characters": "Batman",
+            "side_characters": [
+                "Jonathan Crane"
+            ],
+            "price": "$3.99",
+            "release_date": "27.05.2009.",
+            "publisher": "DC Comics",
+            "page_count": 48,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 6.7
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2029"
+            },
+            "title": "Flashpoint: Reverse Flash",
+            "creators": [{
+                "name": "Scott Kolins",
+                "job": "Writer"
+            },
+            {
+                "name": "Joel Gomez",
+                "job": "Artist"
+            }],
+            "main_characters": "Reverse Flash",
+            "side_characters": [
+                "Flash"
+            ],
+            "price": "$2.99",
+            "release_date": "22.06.2011.",
+            "publisher": "DC Comics",
+            "page_count": 32,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 9.1
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b202a"
+            },
+            "title": "Critical Role - Vox Machina: Origins",
+            "creators": [{
+                "name": "Matthew Mercer",
+                "job": "Writer"
+            },
+            {
+                "name": "Olivia Samson",
+                "job": "Artist"
+            }],
+            "main_characters": "Vox Machina",
+            "side_characters": [
+                "Grog Strongjaw"
+            ],
+            "price": "$3.99",
+            "release_date": "10.02.2021.",
+            "publisher": "Dark Horse Comics",
+            "page_count": 32,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 9.9
+        }]
+    },
+    "examples": [
+        [{
+            "_id": {
+                "$oid": "636138473267d755b47b2021"
+            },
+            "title": "Invincible Iron Man",
+            "creators": [{
+                "name": "Gerry Dugan",
+                "job": "Writer"
+            },
+            {
+                "name": "Juan Frigeri",
+                "job": "Artist"
+            }],
+            "main_characters": "Iron Man",
+            "side_characters": [
+                "Hulk"
+            ],
+            "price": "$4.99",
+            "release_date": "14.12.2022.",
+            "publisher": "Marvel Comics",
+            "page_count": 36,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 9.4
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2022"
+            },
+            "title": "Dark Web",
+            "creators": [{
+                "name": "Zeb Wells",
+                "job": "Writer"
+            },
+            {
+                "name": "Adam Kubert",
+                "job": "Artist"
+            }],
+            "main_characters": "Spider-Man",
+            "side_characters": [
+                "Jean Gray"
+            ],
+            "price": "$4.99",
+            "release_date": "7.12.2022.",
+            "publisher": "Marvel Comics",
+            "page_count": 36,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 8.7
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2023"
+            },
+            "title": "Ant-Man \u0026 Wasp",
+            "creators": [{
+                "name": "Tim Seeley",
+                "job": "Writer"
+            },
+            {
+                "name": "Victor Olazaba",
+                "job": "Inker"
+            }],
+            "main_characters": "Ant-Man",
+            "side_characters": [
+                "Wasp"
+            ],
+            "price": "$3.99",
+            "release_date": "1.12.2010.",
+            "publisher": "Marvel Comics",
+            "page_count": 32,
+            "format": "Comic",
+            "issue_number": "#2",
+            "rating": 7.3
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2024"
+            },
+            "title": "Black Panther",
+            "creators": [{
+                "name": "Ta-Nehisi Coates",
+                "job": "Writer"
+            },
+            {
+                "name": "Joe Sabino",
+                "job": "Letterer"
+            }],
+            "main_characters": "Balck Panther",
+            "side_characters": [
+                "Okoye"
+            ],
+            "price": "$3.99",
+            "release_date": "28.03.2018.",
+            "publisher": "Marvel Comics",
+            "page_count": 28,
+            "format": "Comic",
+            "issue_number": "#171",
+            "rating": 8.9
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2025"
+            },
+            "title": "Captain America",
+            "creators": [{
+                "name": "Ed Brubaker",
+                "job": "Writer"
+            },
+            {
+                "name": "Sean McKeever",
+                "job": "Writer"
+            },
+            {
+                "name": "Butch Guice",
+                "job": "Artist"
+            }],
+            "main_characters": "Captain America",
+            "side_characters": [
+                "Baron Zemo"
+            ],
+            "price": "$3.99",
+            "release_date": "09.06.2010.",
+            "publisher": "Marvel Comics",
+            "page_count": 28,
+            "format": "Comic",
+            "issue_number": "#606",
+            "rating": 7.3
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2026"
+            },
+            "title": "The Flash: One-Minute War Special",
+            "creators": [{
+                "name": "Gerry Dugan",
+                "job": "Writer"
+            },
+            {
+                "name": "Juan Frigeri",
+                "job": "Artist"
+            }],
+            "main_characters": "Barry Allen Flash",
+            "side_characters": [
+                "Wally West Flash"
+            ],
+            "price": "$5.99",
+            "release_date": "31.1.2023.",
+            "publisher": "DC Comics",
+            "page_count": 48,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": null
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2027"
+            },
+            "title": "Adventures of Superman",
+            "creators": [{
+                "name": "Christos Gage",
+                "job": "Writer"
+            },
+            {
+                "name": "Eduardo Francisco",
+                "job": "Artist"
+            }],
+            "main_characters": "Superman",
+            "side_characters": [
+                "Bizzaro"
+            ],
+            "price": "$3.99",
+            "release_date": "29.01.2014.",
+            "publisher": "DC Comics",
+            "page_count": 28,
+            "format": "Comic",
+            "issue_number": "#9",
+            "rating": 4.3
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2028"
+            },
+            "title": "Batman in Barcelona: Dragon's Knight",
+            "creators": [{
+                "name": "Mark Waid",
+                "job": "Writer"
+            },
+            {
+                "name": "Diego Olmos",
+                "job": "Artist"
+            }],
+            "main_characters": "Batman",
+            "side_characters": [
+                "Jonathan Crane"
+            ],
+            "price": "$3.99",
+            "release_date": "27.05.2009.",
+            "publisher": "DC Comics",
+            "page_count": 48,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 6.7
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b2029"
+            },
+            "title": "Flashpoint: Reverse Flash",
+            "creators": [{
+                "name": "Scott Kolins",
+                "job": "Writer"
+            },
+            {
+                "name": "Joel Gomez",
+                "job": "Artist"
+            }],
+            "main_characters": "Reverse Flash",
+            "side_characters": [
+                "Flash"
+            ],
+            "price": "$2.99",
+            "release_date": "22.06.2011.",
+            "publisher": "DC Comics",
+            "page_count": 32,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 9.1
+        },
+        {
+            "_id": {
+                "$oid": "636138473267d755b47b202a"
+            },
+            "title": "Critical Role - Vox Machina: Origins",
+            "creators": [{
+                "name": "Matthew Mercer",
+                "job": "Writer"
+            },
+            {
+                "name": "Olivia Samson",
+                "job": "Artist"
+            }],
+            "main_characters": "Vox Machina",
+            "side_characters": [
+                "Grog Strongjaw"
+            ],
+            "price": "$3.99",
+            "release_date": "10.02.2021.",
+            "publisher": "Dark Horse Comics",
+            "page_count": 32,
+            "format": "Comic",
+            "issue_number": "#1",
+            "rating": 9.9
+        }]
+    ]
+}
