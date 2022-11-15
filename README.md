@@ -6,9 +6,11 @@ License: MIT
 
 License Autor: Toni Dujmović
 
-Version: 1.0
+Version: 2.0
 
 Publication date 	02.11.2022.
+
+Last update 15.11.2022.
 
 The language with which the data was described is English.
 
