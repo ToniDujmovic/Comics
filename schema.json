@@ -19,7 +19,6 @@
             "page_count",
             "format",
             "issue_number",
-            "rating"
         ],
         "properties": {
             "_id": {
