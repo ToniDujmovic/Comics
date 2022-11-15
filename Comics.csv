@@ -1,22 +1,22 @@
-_id, title, name, job, main characters, side characters, price, release date, publisher,page count,format, issue number, rating
-636138473267d755b47b2021, Invincible Iron Man,Gerry Dugan, Writer,Iron Man,Hulk,$4.99 ,14.12.2022.,Marvel Comics,36,Comic,#1,9.4
-636138473267d755b47b2021, Invincible Iron Man,Juan Frigeri, Artist,Iron Man,Hulk,$4.99 ,14.12.2022.,Marvel Comics,36,Comic,#1,9.4
-636138473267d755b47b2022,Dark Web,Zeb Wells,Writer,Spider-Man,"Jean Gray,Cyclops",$4.99 ,7.12.2022.,Marvel Comics,36,Comic,#1,8.7
-636138473267d755b47b2022,Dark Web,Adam Kubert,Artist,Spider-Man,"Jean Gray,Cyclops",$4.99 ,7.12.2022.,Marvel Comics,36,Comic,#1,8.7
-636138473267d755b47b2023,Ant-Man & Wasp,Tim Seeley,Writer,Ant-Man,Wasp,$3.99 ,1.12.2010.,Marvel Comics,32,Comic,#2,7.3
-636138473267d755b47b2023,Ant-Man & Wasp,Victor Olazaba,Inker,Ant-Man,Wasp,$3.99 ,1.12.2010.,Marvel Comics,32,Comic,#2,7.3
-636138473267d755b47b2024,Black Panther,Ta-Nehisi Coates,Writer,Balck Panther,"Okoye,Klaw,Storm,Adversery",$3.99 ,28.03.2018.,Marvel Comics,28,Comic,#171,8.9
-636138473267d755b47b2024,Black Panther,Joe Sabino,Letterer,Balck Panther,"Okoye,Klaw,Storm,Adversery",$3.99 ,28.03.2018.,Marvel Comics,28,Comic,#171,8.9
-636138473267d755b47b2025,Captain America,Ed Brubaker,Writer,Captain America,"Baron Zemo,Buldozer,Falcon",$3.99 ,09.06.2010.,Marvel Comics,28,Comic,#606,7.3
-636138473267d755b47b2025,Captain America,Sean McKeever,Writer,Captain America,"Baron Zemo,Buldozer,Falcon",$3.99 ,09.06.2010.,Marvel Comics,28,Comic,#606,7.3
-636138473267d755b47b2025,Captain America,Butch Guice,Artits,Captain America,"Baron Zemo,Buldozer,Falcon",$3.99 ,09.06.2010.,Marvel Comics,28,Comic,#606,7.3
-636138473267d755b47b2026,The Flash: One-Minute War Special,Gerry Dugan,Writer,Barry Allen Flash,"Wally West Flash,Impulse,Kid Flash",$5.99 ,31.1.2023.,DC Comics,48,Comic,#1,null
-636138473267d755b47b2026,The Flash: One-Minute War Special,Juan Frigeri,Artist,Barry Allen Flash,"Wally West Flash,Impulse,Kid Flash",$5.99 ,31.1.2023.,DC Comics,48,Comic,#1,null
-636138473267d755b47b2027,Adventures of Superman,Christos Gage,Writer,Superman,"Bizzaro,Louis Lane",$3.99 ,29.01.2014.,DC Comics,28,Comic,#9,4.3
-636138473267d755b47b2027,Adventures of Superman,Eduardo Francisco,Artist,Superman,"Bizzaro,Louis Lane",$3.99 ,29.01.2014.,DC Comics,28,Comic,#9,4.3
-636138473267d755b47b2028,Batman in Barcelona: Dragon's Knight,Mark Waid,Writer,Batman,"Jonathan Crane,Killer Croc",$3.99 ,27.05.2009.,DC Comics,48,Comic,#1,6.7
-636138473267d755b47b2028,Batman in Barcelona: Dragon's Knight,Diego Olmos,Artist,Batman,"Jonathan Crane,Killer Croc",$3.99 ,27.05.2009.,DC Comics,48,Comic,#1,6.7
-636138473267d755b47b2029,Flashpoint: Reverse Flash,Scott Kolins,Writer,Reverse Flash,Flash,$2.99 ,22.06.2011.,DC Comics,32,Comic,#1,9.1
-636138473267d755b47b2029,Flashpoint: Reverse Flash,Joel Gomez,Artist,Reverse Flash,Flash,$2.99 ,22.06.2011.,DC Comics,32,Comic,#1,9.1
-636138473267d755b47b202a,Critical Role - Vox Machina: Origins,Matthew Mercer,Writer,Vox Machina,"Grog Strongjaw,Percival de Rolo",$3.99 ,10.02.2021.,Dark Horse Comics,32,Comic,#1,9.9
-636138473267d755b47b202a,Critical Role - Vox Machina: Origins,MOlivia Samson,Artist,Vox Machina,"Grog Strongjaw,Percival de Rolo",$3.99 ,10.02.2021.,Dark Horse Comics,32,Comic,#1,9.9
+id,title,name,job,main characters,side characters,price,release date,publisher,page count,format,issue number,rating
+636138473267d755b47b2021,Invincible Iron Man,Gerry Dugan,Writer,Iron Man,"Hulk",$4.99,14.12.2022.,Marvel Comics,36,Comic,#1,9.4
+636138473267d755b47b2021,Invincible Iron Man,Juan Frigeri,Artist,Iron Man,"Hulk",$4.99,14.12.2022.,Marvel Comics,36,Comic,#1,9.4
+636138473267d755b47b2022,Dark Web,Zeb Wells,Writer,Spider-Man,"Jean Gray",$4.99,7.12.2022.,Marvel Comics,36,Comic,#1,8.7
+636138473267d755b47b2022,Dark Web,Adam Kubert,Artist,Spider-Man,"Jean Gray",$4.99,7.12.2022.,Marvel Comics,36,Comic,#1,8.7
+636138473267d755b47b2023,Ant-Man & Wasp,Tim Seeley,Writer,Ant-Man,"Wasp",$3.99,1.12.2010.,Marvel Comics,32,Comic,#2,7.3
+636138473267d755b47b2023,Ant-Man & Wasp,Victor Olazaba,Inker,Ant-Man,"Wasp",$3.99,1.12.2010.,Marvel Comics,32,Comic,#2,7.3
+636138473267d755b47b2024,Black Panther,Ta-Nehisi Coates,Writer,Balck Panther,"Okoye",$3.99,28.03.2018.,Marvel Comics,28,Comic,#171,8.9
+636138473267d755b47b2024,Black Panther,Joe Sabino,Letterer,Balck Panther,"Okoye",$3.99,28.03.2018.,Marvel Comics,28,Comic,#171,8.9
+636138473267d755b47b2025,Captain America,Ed Brubaker,Writer,Captain America,"Baron Zemo",$3.99,09.06.2010.,Marvel Comics,28,Comic,#606,7.3
+636138473267d755b47b2025,Captain America,Sean McKeever,Writer,Captain America,"Baron Zemo",$3.99,09.06.2010.,Marvel Comics,28,Comic,#606,7.3
+636138473267d755b47b2025,Captain America,Butch Guice,Artist,Captain America,"Baron Zemo",$3.99,09.06.2010.,Marvel Comics,28,Comic,#606,7.3
+636138473267d755b47b2026,The Flash: One-Minute War Special,Gerry Dugan,Writer,Barry Allen Flash,"Wally West Flash",$5.99,31.1.2023.,DC Comics,48,Comic,#1,null
+636138473267d755b47b2026,The Flash: One-Minute War Special,Juan Frigeri,Artist,Barry Allen Flash,"Wally West Flash",$5.99,31.1.2023.,DC Comics,48,Comic,#1,null
+636138473267d755b47b2027,Adventures of Superman,Christos Gage,Writer,Superman,"Bizzaro",$3.99,29.01.2014.,DC Comics,28,Comic,#9,4.3
+636138473267d755b47b2027,Adventures of Superman,Eduardo Francisco,Artist,Superman,"Bizzaro",$3.99,29.01.2014.,DC Comics,28,Comic,#9,4.3
+636138473267d755b47b2028,Batman in Barcelona: Dragon's Knight,Mark Waid,Writer,Batman,"Jonathan Crane",$3.99,27.05.2009.,DC Comics,48,Comic,#1,6.7
+636138473267d755b47b2028,Batman in Barcelona: Dragon's Knight,Diego Olmos,Artist,Batman,"Jonathan Crane",$3.99,27.05.2009.,DC Comics,48,Comic,#1,6.7
+636138473267d755b47b2029,Flashpoint: Reverse Flash,Scott Kolins,Writer,Reverse Flash,"Flash",$2.99,22.06.2011.,DC Comics,32,Comic,#1,9.1
+636138473267d755b47b2029,Flashpoint: Reverse Flash,Joel Gomez,Artist,Reverse Flash,"Flash",$2.99,22.06.2011.,DC Comics,32,Comic,#1,9.1
+636138473267d755b47b202a,Critical Role - Vox Machina: Origins,Matthew Mercer,Writer,Vox Machina,"Grog Strongjaw",$3.99,10.02.2021.,Dark Horse Comics,32,Comic,#1,9.9
+636138473267d755b47b202a,Critical Role - Vox Machina: Origins,Olivia Samson,Artist,Vox Machina,"Grog Strongjaw",$3.99,10.02.2021.,Dark Horse Comics,32,Comic,#1,9.9
