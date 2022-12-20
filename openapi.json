@@ -1,0 +1,247 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "Comics OpenAPI 1.0",
+		"description": "Api for the Comics database from Toni Dujmovic",
+		"version": "1.0",
+		"contact": {"email": "toni.dujmovic@fer.hr"},
+		"license": {
+			"name": "MIT License",
+			"url": "https://github.com/ToniDujmovic/Comics/blob/main/LICENSE"
+			}
+	},
+	"paths": {
+		"/comic/{id}": {
+			"get": {
+				"summary": "Get resource from collection by ID",
+				"description": "Returns a single collection resource",
+				"parameters": 
+					["id" : "id"],
+				"responses": {
+					"200": {
+						"description": "Successful operation",
+						"content":{
+							"application/json":{
+								"schema": {
+									"$ref": "#/schema/comic"
+								}
+							}
+						}
+					},
+					"404": {
+						"description" : "Comic with {id} not found"
+						},
+					"400": {
+						"description" : "Bad request"
+					}
+				}
+			},
+			"put": {
+				"summary": "Update resource from collection by ID",
+				"description": "Update a single collection resource",
+				"requestBody": {
+					"content":{
+						"application/json": {
+							"schema":{
+								"$ref": "#/schema/comic"
+							}
+						}
+					},
+					"required": true	
+				},
+				"responses": {
+					"200": {
+						"description": "Successful operation",
+						"content":{
+							"application/json":{
+								"schema": {
+									"$ref": "#/schema/comic"
+								}
+							}
+						}
+					},
+					"404": {
+						"description" : "Comic with {id} not found"
+					}
+				}
+			},
+			"delete": {
+				"summary": "Delete resource from collection by ID",
+				"description": "Delets a single collection resource",
+				"responses": {
+					"200": {
+						"description": "Successful operation",
+						"content":{
+							"application/json":{
+								"schema": {
+									"$ref": "#/schema/comic"
+								}
+							}
+						}
+					},
+					"404": {
+						"description" : "Comic with {id} not found"
+					}
+				}
+			}
+		},
+		"/comic": {
+			"post": {
+				"summary": "Crate resource for collection wiht new ID",
+				"description": "Creats a single new comic",
+				"requestBody": {
+					"content":{
+						"application/json": {
+							"schema":{
+								"$ref": "#/schema/comic"
+							}
+						}
+					},
+					"required": true	
+				},
+				"responses": {
+					"200": {
+						"description": "Successful operation",
+						"content":{
+							"application/json":{
+								"schema": {
+									"$ref": "#/schema/comic"
+								}
+							}
+						}
+					}
+				},
+		
+			}
+		},
+		"/api/getAll": {
+			"get": {
+				"summary": "Get all resources from collection",
+				"description": "Returns all comics from the collection",
+				"responses": {
+					"200": {
+						"description": "Successful operation",
+						"content":{
+							"application/json":{
+								"schema": {
+									"$ref": "#/schema/comic"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/firstIssueComics" : {
+			"get": {
+				"summary": "Get resource from collection based on issue_number",
+				"description": "Returns a single collection resource of comics that are first issue",
+				"responses": {
+					"200": {
+						"description": "Successful operation",
+						"content":{
+							"application/json":{
+								"schema": {
+									"$ref": "#/schema/comic"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/marvelComics" : {
+			"get": {
+				"summary": "Get resource from collection based on publisher",
+				"description": "Returns a single collection resource of comics that are published by Marvel Comics",
+				"responses": {
+					"200": {
+						"description": "Successful operation",						
+						"content":{
+							"application/json":{
+								"schema": {
+									"$ref": "#/schema/comic"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/comicsRatingOver7" : {
+			"get": {
+				"summary": "Get resource from collection based on rating",
+				"description": "Returns a single collection resource of comics that have ratings over 7",
+				"responses": {
+					"200": {
+						"description": "Successful operation",
+						"content":{
+							"application/json":{
+								"schema": {
+									"$ref": "#/schema/comic"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+"schema":{
+	"comic":{
+			"type" : "Object",
+			"properties":{
+				"cid": {
+					"type": "integer",
+					"format": "int64",
+					"example": 10
+				},
+				"title": {
+					"type": "integer",
+					"example": "Iron Man"
+				},
+				"creators": {
+					"type": "string",
+					"example": "Doug Linky Writer"
+				},
+				"main_characters": {
+					"type": "string",
+					"example": "Iron Man"
+				},
+				"side_character":{
+					"type": "string",
+					"example": "Hulk"
+				},
+				"price": {
+					"type": "string",
+					"example": "$10"
+				},
+				"release_date": {
+					"type": "string",
+					"example": "10.12.2022."
+				},
+				"publisher": {
+					"type": "string",
+					"example": "Marvel Comics"
+				},
+				"page_count": {
+					"type": "integer",
+					"format": "int64",
+					"example": "10"
+				},
+				"format": {
+					"type": "string",
+					"example": "comic"
+				},
+				"issue_number": {
+					"type": "string",
+					"example": "#1"
+				},
+				"rating": {
+					"type": "long",
+					"example": "7.1"
+				}
+			}
+		}
+	}
+}

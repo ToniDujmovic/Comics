@@ -82,6 +82,7 @@ const csvOptions = {
   headers: columns.map((c) => c.header),
 };
 
+
 const csvExporter = new ExportToCsv(csvOptions);
 
 const Example = () => {
@@ -89,7 +90,7 @@ const Example = () => {
   const [data, setUser] = useState([]);
 
   const fetchData = () => {
-    return fetch("/getAll")
+    return fetch("/api/getAll")
         .then((response) => response.json())
         .then((data) => setUser(data));
   }
@@ -104,6 +105,16 @@ const Example = () => {
 
   const handleExportRows = (rows) => {
     csvExporter.generateCsv(rows.map((row) => row.original));
+  };
+  const handleExportJson = (rows) =>{
+     const obj = rows.map((row) => row.original);
+     const jsonobj = `data:text/json;chatset=utf-8,${encodeURIComponent(
+         JSON.stringify(obj)
+     )}`;
+     const link = document.createElement("a");
+     link.href = jsonobj;
+     link.download = "data.json";
+     link.click();
   };
 
 
@@ -183,7 +194,7 @@ const Example = () => {
                     disabled={table.getPrePaginationRowModel().rows.length === 0}
                     //export all rows, including from the next page, (still respects filtering and sorting)
                     onClick={() =>
-                        handleLogRows(table.getPrePaginationRowModel().rows)
+                        handleExportJson(table.getPrePaginationRowModel().rows)
                     }
                     startIcon={<FileDownloadIcon />}
                     variant="contained"

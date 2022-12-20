@@ -1,6 +1,5 @@
 package com.example.comicsbe.dto;
 
-import com.example.comicsbe.model.Creators;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,15 +11,11 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ComicDto {
-
-    private Long cid;
+public class ComicForm {
 
     private String title;
 
-    private String creatorName;
-
-    private String creatorJob;
+    private List<CreatorForm> creators;
 
     private String main_characters;
 

@@ -1,26 +1,20 @@
 package com.example.comicsbe.dto;
 
-import com.example.comicsbe.model.Creators;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ComicDto {
-
+public class ComicCustomDto {
     private Long cid;
 
     private String title;
 
-    private String creatorName;
-
-    private String creatorJob;
+    private String creators;
 
     private String main_characters;
 
