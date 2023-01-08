@@ -2,8 +2,12 @@ import React, { useEffect, useMemo, useState } from 'react';
 import MaterialReactTable from 'material-react-table';
 import { Box, Button } from '@mui/material';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import { ExportToCsv } from 'export-to-csv'; //or use your library of choice here
-
+import ReactDOM from "react-dom";
+import { useAuth0, Auth0Provider } from "@auth0/auth0-react";
+import LoginButton from "./components/LoginButton";
+import LogOutButton from "./components/LogOutButton";
 
 const columns = [
   //{
@@ -89,6 +93,10 @@ const Example = () => {
 
   const [data, setUser] = useState([]);
 
+  const { loginWithRedirect, isAuthenticated} = useAuth0();
+  const { logout } = useAuth0();
+  const { user } = useAuth0();
+
   const fetchData = () => {
     return fetch("/api/getAll")
         .then((response) => response.json())
@@ -117,19 +125,21 @@ const Example = () => {
      link.click();
   };
 
+  function refreshData(data1){
+    handleExportJson(data1);
+    handleExportData(data);
+  }
 
-//  const [, getData] = useAxios(
-//      {
-//        url: "http://localhost:8080/getAll"
-//      },
-//  );
-
-//  const getCustomersData = () => {
-//    axios
-//        .get("/getAll")
-//        .then(response => data = response.data);
-//  };
-//  getCustomersData();
+  const LoginButton = () => {
+    loginWithRedirect();
+  };
+  const LogOutButton = () => {
+    logout();
+  };
+  const UserInfo = () => {
+    var ispis = "Email : " + user.email + "\nUsername : " + user.name + "\nNickname : " + user.nickname;
+    alert(ispis);
+  };
 
   const handleLogRows = (rows) => {
     console.log(rows.map((row) => console.log(row.original)));
@@ -139,72 +149,178 @@ const Example = () => {
   const handleExportData = () => {
     csvExporter.generateCsv(data);
   };
-
-  return (
-      <MaterialReactTable
-          columns={columns}
-          data={data}
-          enableRowSelection
-          positionToolbarAlertBanner="bottom"
-          renderTopToolbarCustomActions={({ table }) => (
-              <Box
-                  sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}
-              >
-                <Button
-                    color="primary"
-                    //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
-                    onClick={handleExportData}
-                    startIcon={<FileDownloadIcon />}
-                    variant="contained"
-                >
-                  Export All Data
-                </Button>
-                <Button
-                    disabled={table.getPrePaginationRowModel().rows.length === 0}
-                    //export all rows, including from the next page, (still respects filtering and sorting)
-                    onClick={() =>
-                        handleExportRows(table.getPrePaginationRowModel().rows)
-                    }
-                    startIcon={<FileDownloadIcon />}
-                    variant="contained"
-                >
-                  Export All Rows
-                </Button>
-                <Button
-                    disabled={table.getRowModel().rows.length === 0}
-                    //export all rows as seen on the screen (respects pagination, sorting, filtering, etc.)
-                    onClick={() => handleExportRows(table.getRowModel().rows)}
-                    startIcon={<FileDownloadIcon />}
-                    variant="contained"
-                >
-                  Export Page Rows
-                </Button>
-                <Button
-                    disabled={
-                        !table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()
-                    }
-                    //only export selected rows
-                    onClick={() => handleExportRows(table.getSelectedRowModel().rows)}
-                    startIcon={<FileDownloadIcon />}
-                    variant="contained"
-                >
-                  Export Selected Rows
-                </Button>
-                <Button
-                    disabled={table.getPrePaginationRowModel().rows.length === 0}
-                    //export all rows, including from the next page, (still respects filtering and sorting)
-                    onClick={() =>
-                        handleExportJson(table.getPrePaginationRowModel().rows)
-                    }
-                    startIcon={<FileDownloadIcon />}
-                    variant="contained"
-                >
-                  Export JSON
-                </Button>
-              </Box>
-          )}
-      />
-  );
+  if (isAuthenticated) {
+    return (
+        <main>
+          <MaterialReactTable
+              columns={columns}
+              data={data}
+              enableRowSelection
+              positionToolbarAlertBanner="bottom"
+              renderTopToolbarCustomActions={({table}) => (
+                  <Box
+                      sx={{display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap'}}
+                  >
+                    <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={handleExportData}
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export All Data
+                    </Button>
+                    <Button
+                        disabled={table.getPrePaginationRowModel().rows.length === 0}
+                        //export all rows, including from the next page, (still respects filtering and sorting)
+                        onClick={() =>
+                            handleExportRows(table.getPrePaginationRowModel().rows)
+                        }
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export All Rows
+                    </Button>
+                    <Button
+                        disabled={table.getRowModel().rows.length === 0}
+                        //export all rows as seen on the screen (respects pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportRows(table.getRowModel().rows)}
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export Page Rows
+                    </Button>
+                    <Button
+                        disabled={
+                            !table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()
+                        }
+                        //only export selected rows
+                        onClick={() => handleExportRows(table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export Selected Rows
+                    </Button>
+                    <Button
+                        disabled={table.getPrePaginationRowModel().rows.length === 0}
+                        //export all rows, including from the next page, (still respects filtering and sorting)
+                        onClick={() =>
+                            handleExportJson(table.getPrePaginationRowModel().rows)
+                        }
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export JSON
+                    </Button>
+                    <Button
+                        //export all rows, including from the next page, (still respects filtering and sorting)
+                        onClick={() =>
+                            LogOutButton()
+                        }
+                        variant="contained"
+                    >
+                      Logout
+                    </Button>
+                    <Button
+                        //export all rows, including from the next page, (still respects filtering and sorting)
+                        onClick={() => refreshData(table.getPrePaginationRowModel().rows)}
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Osvježi preslike
+                    </Button>
+                    <Button
+                        //export all rows, including from the next page, (still respects filtering and sorting)
+                        onClick={() =>
+                            UserInfo()
+                        }
+                        variant="contained"
+                    >
+                      Korisnički profil
+                    </Button>
+                  </Box>
+              )}
+          />
+        </main>
+    );
+  } else {
+    return (
+        <main>
+          <MaterialReactTable
+              columns={columns}
+              data={data}
+              enableRowSelection
+              positionToolbarAlertBanner="bottom"
+              renderTopToolbarCustomActions={({table}) => (
+                  <Box
+                      sx={{display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap'}}
+                  >
+                    <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={handleExportData}
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export All Data
+                    </Button>
+                    <Button
+                        disabled={table.getPrePaginationRowModel().rows.length === 0}
+                        //export all rows, including from the next page, (still respects filtering and sorting)
+                        onClick={() =>
+                            handleExportRows(table.getPrePaginationRowModel().rows)
+                        }
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export All Rows
+                    </Button>
+                    <Button
+                        disabled={table.getRowModel().rows.length === 0}
+                        //export all rows as seen on the screen (respects pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportRows(table.getRowModel().rows)}
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export Page Rows
+                    </Button>
+                    <Button
+                        disabled={
+                            !table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()
+                        }
+                        //only export selected rows
+                        onClick={() => handleExportRows(table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export Selected Rows
+                    </Button>
+                    <Button
+                        disabled={table.getPrePaginationRowModel().rows.length === 0}
+                        //export all rows, including from the next page, (still respects filtering and sorting)
+                        onClick={() =>
+                            handleExportJson(table.getPrePaginationRowModel().rows)
+                        }
+                        startIcon={<FileDownloadIcon/>}
+                        variant="contained"
+                    >
+                      Export JSON
+                    </Button>
+                    <Button
+                      //export all rows, including from the next page, (still respects filtering and sorting)
+                      onClick={() =>
+                          LoginButton()
+                      }
+                      variant="contained"
+                  >
+                    Login
+                  </Button>
+                  </Box>
+              )}
+          />
+        </main>
+    );
+  }
 };
 
 export default Example;
